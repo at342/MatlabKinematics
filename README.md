@@ -1,1 +1,2 @@
 # MatlabKinematics
+- mDistRedundantInverseKinematics6DofArticulatedSerialArm.m 冗長マニピュレータの逆運動学
