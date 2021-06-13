@@ -230,7 +230,7 @@ function J=ComputeJacobian(posJoint,frameJoint,JointConfig)%ヤコビ行列計�
 end
 
 function R=Raxis(t,axis)%ロドリゲス回転公式 t:radian, axis:縦単位ベクトル
-n=axis;
+n=axis;%この無意味な行はなんなんだ
 R= [cos(t)+n(1)^2*(1-cos(t)) n(1)*n(2)*(1-cos(t))-n(3)*sin(t) n(1)*n(3)*(1-cos(t))+n(2)*sin(t);
     n(2)*n(1)*(1-cos(t))+n(3)*sin(t) cos(t)+n(2)^2*(1-cos(t)) n(2)*n(3)*(1-cos(t))-n(1)*sin(t);
     n(3)*n(1)*(1-cos(t))-n(2)*sin(t) n(3)*n(2)*(1-cos(t))+n(1)*sin(t) cos(t)+n(3)^2*(1-cos(t))];
