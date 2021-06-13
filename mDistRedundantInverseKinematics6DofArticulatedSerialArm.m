@@ -117,8 +117,8 @@ plot3([posJointNow(1,end-1) TipOriZ(1)],[posJointNow(2,end-1) TipOriZ(2)],[posJo
 
 %%%%%%冗長自由度を最適化IK
 dTheta=0.01*pi;%評価関数の勾配を求めるための微小変分
-LogPhi=NaN(Loop,1);%評価関数のログ用変数
 Loop=200;
+LogPhi=NaN(Loop,1);%評価関数のログ用変数
 
 for k=1:Loop
     J=ComputeJacobian(posJointNow,frameJointNow,JointConfig);%ヤコビ行列計算
