@@ -45,14 +45,14 @@ rotTargetAngle=(rand(1,1)-0.5)*pi;%目標姿勢への回転量
 #### 冗長な自由度を決定する最適化の評価関数
 関節角thetaPをパラメータとしたスカラー関数なら何でもよい．
 この関数Phiを最大化するように冗長自由度が更新される．
-例では4関節目のy座標を最大化，つまり肘関節をできるだけ右に持っていくように逆運動学解が更新される．
+例では4関節目のy座標を最小化，つまり肘関節をできるだけ右に持っていくように逆運動学解が更新される．
 他の評価関数の候補としては，障害物からのポテンシャル最小化で障害物回避や，関節トルクの２乗ノルムを最小化で消費エネルギ低減などがある．
 ```
 function OptVal = Phi(thetaP,LengthLink,JointConfig,posJoint,frameJoint)%最大化されるスカラー関数Phi
     [posJointP,frameJoinP]=FwardKinematicsArticulatedSerialArm(thetaP,LengthLink,JointConfig);
 %     OptVal=-sum( (posJointP(:,4)).^2 );%4関節目の位置の二乗和を最小化
 %     OptVal=-posJointP(3,4);%4関節目のz座標を最小化
-    OptVal=-posJointP(2,4);%4関節目のy座標を最大化
+    OptVal=-posJointP(2,4);%4関節目のy座標を最小化
 end
 ```
 
