@@ -240,5 +240,5 @@ function OptVal = Phi(thetaP,LengthLink,JointConfig,posJoint,frameJoint)%最大�
     [posJointP,frameJoinP]=FwardKinematicsArticulatedSerialArm(thetaP,LengthLink,JointConfig);
 %     OptVal=-sum( (posJointP(:,4)).^2 );%4関節目の位置の二乗和を最小化
 %     OptVal=-posJointP(3,4);%4関節目のz座標を最小化
-    OptVal=-posJointP(2,4);%4関節目のy座標を最大化
+    OptVal=-posJointP(2,4);%4関節目のy座標を最小化
 end
